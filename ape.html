@@ -3,9 +3,286 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agentic Platform Engineering</title>
+  <title>Agentic Platform Engineering with GitHub Copilot</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    .content {
+      padding: 2rem;
+    }
+    h2 {
+      color: #667eea;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #667eea;
+      padding-bottom: 0.5rem;
+    }
+    h2:first-child {
+      margin-top: 0;
+    }
+    h3 {
+      color: #764ba2;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    ul, ol {
+      margin-left: 2rem;
+      margin-bottom: 1rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    .flow-box {
+      background: #f8f9fa;
+      border-left: 4px solid #667eea;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 4px;
+    }
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+    .flow-step-number {
+      background: #667eea;
+      color: white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-right: 1rem;
+      font-weight: bold;
+    }
+    .flow-step-content {
+      flex: 1;
+    }
+    .flow-step-content strong {
+      color: #333;
+    }
+    .agents-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .agent-card {
+      background: #f8f9fa;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .agent-card strong {
+      color: #667eea;
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .agent-card p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+    .skills-list {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 6px;
+      margin: 1rem 0;
+    }
+    .skills-category {
+      margin-bottom: 1.5rem;
+    }
+    .skills-category strong {
+      color: #667eea;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .cta {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 6px;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .cta a {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+    code {
+      background: #f0f0f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
-<body style="margin:0;display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;background:#f5f5f5;color:#888;">
-  <p style="font-size:1.5rem;">This will be the Agentic Platform Engineering page</p>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Agentic Platform Engineering</h1>
+      <p>GitHub Copilot-powered Infrastructure Automation</p>
+    </div>
+
+    <div class="content">
+      <h2>What is Git-Ape?</h2>
+      <p>
+        <strong>Git-Ape</strong> is a platform engineering framework built on GitHub Copilot. It provides a structured, 
+        multi-agent system for planning, validating, and deploying Azure infrastructure with security gates, cost analysis, 
+        and CI/CD pipeline integration built in.
+      </p>
+
+      <h2>The Deployment Flow</h2>
+      <div class="flow-box">
+        <div class="flow-step">
+          <div class="flow-step-number">1</div>
+          <div class="flow-step-content">
+            <strong>Collect Inputs</strong> — Requirements Gatherer interviews the user, validates CAF naming and SKU availability
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-number">2</div>
+          <div class="flow-step-content">
+            <strong>Generate & Analyze</strong> — Template Generator produces ARM template, architecture diagram, cost estimate, and security report
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-number">3</div>
+          <div class="flow-step-content">
+            <strong>Security Gate</strong> — Blocking check; failures loop back for fixes
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-number">4</div>
+          <div class="flow-step-content">
+            <strong>WAF Review</strong> — Principal Architect scores against the 5 Well-Architected Framework pillars
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-number">5</div>
+          <div class="flow-step-content">
+            <strong>User Confirmation</strong> — Nothing deploys without explicit approval
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-number">6</div>
+          <div class="flow-step-content">
+            <strong>Deploy</strong> — Resource Deployer runs az deployment, monitors, and retries
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-number">7</div>
+          <div class="flow-step-content">
+            <strong>Validate</strong> — Health checks, endpoint tests, architecture diagram generation
+          </div>
+        </div>
+      </div>
+
+      <h2>Core Agents</h2>
+      <div class="agents-grid">
+        <div class="agent-card">
+          <strong>@git-ape</strong>
+          <p>Main orchestrator; coordinates stages, enforces security gates, delegates to subagents</p>
+        </div>
+        <div class="agent-card">
+          <strong>Requirements Gatherer</strong>
+          <p>Interviews user, validates CAF naming, checks SKU availability</p>
+        </div>
+        <div class="agent-card">
+          <strong>Template Generator</strong>
+          <p>Creates ARM templates, architecture diagrams, cost estimates</p>
+        </div>
+        <div class="agent-card">
+          <strong>Resource Deployer</strong>
+          <p>Runs az deployment, monitoring, retry, integration tests</p>
+        </div>
+        <div class="agent-card">
+          <strong>Principal Architect</strong>
+          <p>WAF 5-pillar review, trade-off analysis</p>
+        </div>
+        <div class="agent-card">
+          <strong>IaC Exporter</strong>
+          <p>Imports live resources into templates</p>
+        </div>
+      </div>
+
+      <h2>Execution Modes</h2>
+      <h3>Interactive</h3>
+      <p>
+        Talk to @git-ape in VS Code Copilot Chat, authenticate via <code>az login</code>, approve each step in real time.
+      </p>
+
+      <h3>Headless</h3>
+      <p>
+        Copilot Coding Agent picks up a GitHub issue, generates templates on a branch, opens a PR, and CI/CD workflows 
+        handle validation, deployment, and teardown via OIDC.
+      </p>
+
+      <h2>CI/CD Workflows</h2>
+      <ul>
+        <li><strong>git-ape-plan.yml</strong> — PR with template changes → validate, what-if, post plan as PR comment</li>
+        <li><strong>git-ape-deploy.yml</strong> — Merge to main or /deploy comment → execute ARM deployment</li>
+        <li><strong>git-ape-destroy.yml</strong> — Merge PR with destroy-requested → delete resource group</li>
+        <li><strong>git-ape-verify.yml</strong> — Manual dispatch → verify OIDC, RBAC, pipeline health</li>
+      </ul>
+
+      <h2>Get Started</h2>
+      <p><strong>Install:</strong></p>
+      <ul>
+        <li><code>copilot plugin marketplace add Azure/git-ape</code></li>
+        <li><code>copilot plugin install Azure/git-ape</code></li>
+      </ul>
+
+      <p><strong>Example Prompts:</strong></p>
+      <ul>
+        <li>@git-ape deploy a Python function app</li>
+        <li>@git-ape deploy a web app with SQL database</li>
+        <li>@Git-Ape Onboarding set up this repo for Azure deployments</li>
+        <li>@git-ape destroy Python function app</li>
+      </ul>
+
+      <div class="cta">
+        <p>📚 Learn more at <a href="https://github.com/Azure/git-ape" target="_blank">github.com/Azure/git-ape</a></p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

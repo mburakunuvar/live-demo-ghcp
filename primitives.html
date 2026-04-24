@@ -25,17 +25,40 @@
     footer { text-align: center; padding: 2rem; color: #8b949e; font-size: 0.85rem; }
     footer a { color: #0969da; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      z-index: 1000;
+    }
+    .skip-link:focus {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: auto;
+      height: auto;
+      padding: 0.75rem 1.5rem;
+      background: #0969da;
+      color: #fff;
+      font-size: 1rem;
+      text-decoration: none;
+      z-index: 1000;
+    }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
   <header>
     <h1>The Eight Primitives of GitHub Copilot Customization</h1>
     <p>Source: <a href="https://github.com/microsoftnorman/customize-your-repo-with-github-copilot">microsoftnorman/customize-your-repo-with-github-copilot</a></p>
   </header>
 
-  <div class="nav"><a href="index.html">&larr; Back to Home</a></div>
+  <nav class="nav" aria-label="Back to home"><a href="index.html">&larr; Back to Home</a></nav>
 
-  <main>
+  <main id="main-content">
     <div class="intro">
       GitHub Copilot is best understood as a system, not a menu of isolated features. The agent loop is at the core: context is assembled, the task is shaped, tools and permissions govern action, and the loop continues until the task completes. Customization enters through eight primitives — control points on that loop.
     </div>

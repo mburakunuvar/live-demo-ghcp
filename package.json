@@ -1,0 +1,16 @@
+{
+  "name": "live-demo-ghcp",
+  "version": "1.0.0",
+  "description": "[![Use this template](https://img.shields.io/badge/Use%20this%20template-2ea44f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mburakunuvar/ghcp-in-action-demo_v2-DONT-DELETE/generate)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^30.3.0",
+    "jsdom": "^24.1.3"
+  }
+}

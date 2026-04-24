@@ -4,8 +4,205 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GitHub Copilot Across Surfaces</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1.5rem;
+    }
+
+    header {
+      text-align: center;
+      max-width: 760px;
+      margin-bottom: 3rem;
+    }
+
+    .copilot-icon {
+      width: 72px;
+      height: 72px;
+      margin-bottom: 1.25rem;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    header h1 span {
+      background: linear-gradient(90deg, #58a6ff, #bc8cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    header p.intro {
+      font-size: 1.1rem;
+      line-height: 1.75;
+      color: #8b949e;
+      max-width: 680px;
+    }
+
+    .surfaces {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      max-width: 760px;
+      margin-bottom: 3rem;
+    }
+
+    .surface-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .surface-card:hover {
+      border-color: #58a6ff;
+      transform: translateY(-2px);
+    }
+
+    .surface-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .surface-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #e6edf3;
+      margin-bottom: 0.35rem;
+    }
+
+    .surface-card p {
+      font-size: 0.8rem;
+      color: #8b949e;
+      line-height: 1.45;
+    }
+
+    .nav-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .btn:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: #238636;
+      color: #ffffff;
+      border: 1px solid #2ea043;
+    }
+
+    .btn-secondary {
+      background: #1f6feb;
+      color: #ffffff;
+      border: 1px solid #388bfd;
+    }
+
+    footer {
+      margin-top: 4rem;
+      font-size: 0.8rem;
+      color: #484f58;
+      text-align: center;
+    }
+
+    footer a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+  </style>
 </head>
-<body style="margin:0;display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;background:#f5f5f5;color:#888;">
-  <p style="font-size:1.5rem;">This will be the GitHub Copilot Across Surfaces page</p>
+<body>
+
+  <header>
+    <!-- Copilot logo (inline SVG) -->
+    <svg class="copilot-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="16" cy="16" r="16" fill="#238636"/>
+      <path d="M10 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="12.5" cy="14.5" r="1.5" fill="#fff"/>
+      <circle cx="19.5" cy="14.5" r="1.5" fill="#fff"/>
+      <path d="M13 22h6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+
+    <h1>GitHub Copilot<br/><span>Across Surfaces</span></h1>
+
+    <p class="intro">
+      GitHub Copilot is no longer just an IDE autocomplete tool — it's an AI system that spans
+      every surface where developers work. The same agent loop, the same customization primitives,
+      and the same agentic capabilities are available across four surfaces: <strong>GitHub.com</strong>,
+      the <strong>IDE</strong>, the <strong>CLI</strong>, and the <strong>SDK</strong>.
+    </p>
+  </header>
+
+  <section class="surfaces" aria-label="Copilot surfaces">
+
+    <div class="surface-card">
+      <div class="icon">🌐</div>
+      <h3>GitHub.com</h3>
+      <p>Copilot is embedded directly in the GitHub platform — issues, PRs, code review, and the Copilot Coding Agent.</p>
+    </div>
+
+    <div class="surface-card">
+      <div class="icon">💻</div>
+      <h3>IDE</h3>
+      <p>Chat, inline completions, multi-file edits, and agent mode in VS Code, JetBrains, Visual Studio, and more.</p>
+    </div>
+
+    <div class="surface-card">
+      <div class="icon">⌨️</div>
+      <h3>CLI</h3>
+      <p>Natural-language commands in the terminal. Explain, suggest, and run shell commands powered by AI.</p>
+    </div>
+
+    <div class="surface-card">
+      <div class="icon">🔧</div>
+      <h3>SDK</h3>
+      <p>Build custom Copilot extensions and agents. Integrate Copilot capabilities into your own tools and workflows.</p>
+    </div>
+
+  </section>
+
+  <nav class="nav-buttons" aria-label="Explore topics">
+    <a href="primitives.html" class="btn btn-primary">⚙️ Primitives</a>
+    <a href="ape.html" class="btn btn-secondary">🤖 Agentic Platform Engineering</a>
+  </nav>
+
+  <footer>
+    <p>Reference: <a href="https://www.dailydoseofghcp.com/posts/ghcp-across-multiple-surfaces.html" target="_blank" rel="noopener">Daily Dose of GHCP — Copilot Across Multiple Surfaces</a></p>
+  </footer>
+
 </body>
 </html>

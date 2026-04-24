@@ -5,9 +5,9 @@
 
 | Property | Value |
 |---|---|
-| **Subscription** | _TBD_ |
-| **Resource Group** | _TBD_ |
-| **Static Web App Name** | _TBD_ |
-| **Region** | _TBD_ |
-| **Live URL** | _TBD_ |
-| **Default Hostname** | _TBD_ |
+| **Subscription** | burak-MS |
+| **Resource Group** | rg-live-demo-ghcp |
+| **Static Web App Name** | swa-live-demo-ghcp |
+| **Region** | westeurope |
+| **Live URL** | https://black-forest-0f6777003.7.azurestaticapps.net |
+| **Default Hostname** | black-forest-0f6777003.7.azurestaticapps.net |
